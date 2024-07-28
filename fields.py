@@ -33,7 +33,9 @@ class Record:
         self.phones.append(Phone(phone))
 
     def remove_phone(self, phone):
-        self.phones.remove(phone)
+        for p in self.phones:
+            if p.value == phone.value:
+                self.phones.remove(p)
 
     def edit_phone(self, old_phone, new_phone):
         for i in range(len(self.phones)):
